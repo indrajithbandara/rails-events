@@ -4,6 +4,8 @@ html {
 }
 body {
   padding-top: 54px;
+  height: 100%;
+	width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -23,6 +25,13 @@ body {
 .card-header {
 	background: transparent;
 }
+
+.showcase {
+	background-image: url("http://fuxwithit.com/wp-content/uploads/2017/09/trip.jpg");
+	background-repeat: no-repeat;
+}
+
+
 
 // import scss file
 @import "bootswatch/cyborg/variables";

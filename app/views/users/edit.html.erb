@@ -1,26 +1,29 @@
 <div class="row"  style="padding: 50px;">
 	<div class="col-md-12">
-		<div class="card card-login col-md-6 offset-md-6">
-      <div class="card-header">Register</div>
+		<div class="card card-login col-md-6 offset-md-3">
+      <div class="card-header">Edit <%= @user.username %></div>
       <div class="card-body">
-        <%= form_tag '/' do  %>
+      	<div class="gravatar text-center">
+      		<%= gravatar_for @user, size: 100 %>
+      	</div>
+        <%= form_tag edit_profile_path do  %>
          <div class="form-group">
             <label for="username">Username</label>
-            <%= text_field_tag :username, nil, class: 'form-control' %>
+            <%= text_field_tag :username, nil, value: @user.username, class: 'form-control' %>
           </div>
           <div class="form-group">
             <label for="email">Email address</label>
-            <%= text_field_tag :email, nil, class: 'form-control' %>
+             <%= text_field_tag(:email, nil, value: @user.email, class: "form-control") %>
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Confirm Password</label>
             <%= password_field_tag :password, nil, class: 'form-control' %>
           </div>
           <div class="form-group">
             <label for="password">Confirm Password</label>
             <%= password_field_tag :password_confirmation, nil, class: 'form-control' %>
           </div>
-          <%= submit_tag 'Register', class: 'btn btn-primary btn-block' %> 
+          <%= submit_tag 'Edit', class: 'btn btn-primary btn-block' %> 
         <% end %>
       </div>
     </div>

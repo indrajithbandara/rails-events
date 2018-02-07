@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsEvents</title>
+    <title>VIP | Very Important Parties</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  
+  <body class="<%= current_page?(root_path) ? 'showcase' : '' %>">
+ 
   	  <!-- Navigation -->
     <%= render 'includes/navigation' %>
 
