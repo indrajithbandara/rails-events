@@ -16,7 +16,15 @@ body {
   margin-bottom: 30px;
 }
 
+.flash-messages {
+	margin-top: 30px;
+}
+
+.card-header {
+	background: transparent;
+}
+
 // import scss file
-@import "bootswatch/sketchy/variables";
+@import "bootswatch/cyborg/variables";
 @import "bootstrap";
-@import "bootswatch/sketchy/bootswatch";
+@import "bootswatch/cyborg/bootswatch";

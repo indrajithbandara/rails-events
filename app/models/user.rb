@@ -16,5 +16,6 @@ class User < ApplicationRecord
       uniqueness: { case_sensitive: false } 
 
   validates :password, presence: true, length: { minimum: 6, maximum: 255 }
+  validates :password, confirmation: { case_sensitive: true }
 
 end
