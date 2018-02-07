@@ -9,6 +9,19 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+  	  <!-- Navigation -->
+    <%= render 'includes/navigation' %>
+
+    <!-- Page Content -->
+    <div class="container">
+		
+		<!-- Body content -->
+		   <%= yield %>
+
+		</div> 
+    <!-- /.container -->
+    <!-- Footer -->
+    <%= render 'includes/footer' %>
+
+     </body>
 </html>
