@@ -191,7 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt (= 3.1.11)
+  bcrypt (~> 3.1.7)
   bootstrap
   bootswatch
   byebug
