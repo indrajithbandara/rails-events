@@ -1,11 +1,37 @@
 <div class="row"  style="padding: 50px;">
   <% if @events.count > 0 %>
     <% @events.each do |event| %>
-      <p><%= event.title %></p>
+      <!-- <p><%= event.title %></p>
       <p><%= event.location %></p><br>
       <p><%= event.start_date %></p><br>
       <p><%= event.end_date %></p><br>
-
+ -->
+ <div class="col-sm-3">
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="content">
+                    <p class="my-1 text-center">
+                      Event title : <%= event.title %>
+                    </p>
+                     <p class="my-1 text-center">
+                      Location : <%= event.location %>
+                    </p>
+                     <p class="my-1 text-center">
+                      Start date : <%= time_ago_in_words(event.start_date)  %>
+                    </p>
+                     <p class="my-1 text-center">
+                      End date : <%= time_ago_in_words(event.end_date)  %>
+                    </p>
+                     <p class="my-1 text-center">
+                     Event creator : <%= event.user.username %>
+                    </p>
+                     <!--   <p class="text-center">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-0">
+                          Contact
+                        </button>
+                      </p> -->
+                </div>
+            </div>
+        </div>
     <% end %>
   <% else %> 
     <h1 class="text-center">No events published</h1>

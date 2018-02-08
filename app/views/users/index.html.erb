@@ -1,0 +1,22 @@
+<div class="row"  style="padding: 50px;">
+  <% if @users.count > 0 %>
+    <% @users.each do |user| %>
+
+ <div class="col-sm-3">
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="content">
+                	 	<div class="gravatar text-center" style="padding: 20px;">
+						      		<%= gravatar_for user, size: 100 %>
+						      	</div>
+                    <p class="my-1 text-center">
+                      <%= user.username %>
+                    </p>
+                   
+                </div>
+            </div>
+        </div>
+    <% end %>
+  <% else %> 
+    <h1 class="text-center">No users</h1>
+  <% end %> 
+</div>

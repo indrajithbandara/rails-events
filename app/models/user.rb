@@ -3,6 +3,9 @@ class User < ApplicationRecord
 	has_many :events
 	has_many :registrations
 
+	has_many :friendships
+  has_many :friends, :through => :friendships
+
 	has_secure_password
 
 	before_save { email.downcase! }

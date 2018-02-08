@@ -31,8 +31,13 @@ body {
 	background-repeat: no-repeat;
 }
 
+.card {
+    border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+    overflow: hidden;
+}
+
+
 // import scss file
 @import "bootswatch/cyborg/variables";
 @import "bootstrap";
 @import "bootswatch/cyborg/bootswatch";
-@import "bootstrap-datepicker3";
