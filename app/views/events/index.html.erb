@@ -1,0 +1,13 @@
+<div class="row"  style="padding: 50px;">
+  <% if @events.count > 0 %>
+    <% @events.each do |event| %>
+      <p><%= event.title %></p>
+      <p><%= event.location %></p><br>
+      <p><%= event.start_date %></p><br>
+      <p><%= event.end_date %></p><br>
+
+    <% end %>
+  <% else %> 
+    <h1 class="text-center">No events published</h1>
+  <% end %> 
+</div>

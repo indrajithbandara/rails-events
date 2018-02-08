@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap'
 gem 'bootswatch'
 gem 'jquery-rails'
+gem 'bootstrap-datepicker-rails'
+
+
 
 group :development, :test do
    # Use sqlite3 as the database for Active Record

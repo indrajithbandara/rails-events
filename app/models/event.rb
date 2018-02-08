@@ -7,11 +7,11 @@ class Event < ApplicationRecord
 	
 	validates :location, presence: true, length: { minimum: 3, maximum: 255 }
 
-	validates :start_date, presence: true, format: { with: /A(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})z/,
-    message: "Format YYYY/MM/DD hh:mm:ss" }
+	# validates :start_date, presence: true, format: { with: /A(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})z/,
+ #    message: "Format YYYY/MM/DD hh:mm:ss" }
 
-  validates :end_date, presence: true, format: { with: /A(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})z/,
-    message: "Format YYYY/MM/DD hh:mm:ss" }
+ #  validates :end_date, presence: true, format: { with: /A(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})z/,
+ #    message: "Format YYYY/MM/DD hh:mm:ss" }
 
   validate :start_date_cannot_be_in_the_past
   validate :end_date_cannot_be_in_the_past

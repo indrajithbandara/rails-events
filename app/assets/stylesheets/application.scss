@@ -31,9 +31,8 @@ body {
 	background-repeat: no-repeat;
 }
 
-
-
 // import scss file
 @import "bootswatch/cyborg/variables";
 @import "bootstrap";
 @import "bootswatch/cyborg/bootswatch";
+@import "bootstrap-datepicker3";

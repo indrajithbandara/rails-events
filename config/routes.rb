@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Get the register user form
   root 'users#new'
    # Post the register user form
-  post '/', to: 'users#create', as: 'post_registration'
+  post '/', to: 'users#create', as: 'user_registration'
   # Login
   post '/login', to: 'sessions#create', as: 'login'
   # Logout
