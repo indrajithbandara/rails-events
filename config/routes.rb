@@ -3,12 +3,13 @@ Rails.application.routes.draw do
  
   # Get the register user form
   root 'users#new'
+   # Post the register user form
+  post '/', to: 'users#create', as: 'post_registration'
   # Login
   post '/login', to: 'sessions#create', as: 'login'
   # Logout
   delete '/logout', to: 'sessions#destroy', as: 'logout'
-  # Post the register user form
-  post '/', to: 'users#create', as: 'post_registration'
+ 
 
 
   get '/user/:id/edit', to: 'users#edit', as: 'edit_profile'
