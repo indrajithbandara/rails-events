@@ -4,22 +4,27 @@
  <div class="col-sm-3">
             <div class="card" style="margin-bottom: 20px;padding: 15px;">
                 <div class="content">
-                    <p class="my-1 text-center">
-                      Event title : <%= event.title %>
+                    <p class="my-1 text-center" style="color:#fff;">
+                      <strong><%= event.title %></strong> 
                     </p>
-                     <p class="my-1 text-center">
+                    <p class="my-1 pull-right">
+                     Users invited : <%= event.registrations.count %>  
+                    </p>
+                     <p class="my-1 pull-right">
                       Location : <%= event.location %>
                     </p>
-                     <p class="my-1 text-center">
+                     <p class="my-1 pull-right">
                       Start date : <%= time_ago_in_words(event.start_date)  %>
                     </p>
-                     <p class="my-1 text-center">
+                     <p class="my-1 pull-right">
                       End date : <%= time_ago_in_words(event.end_date)  %>
                     </p>
-                     <p class="my-1 text-center">
-                     Event creator : <%= event.user.username %>
+                     <p class="my-1 pull-right">
+                     Event creator : <%= event.user.username %>  
                     </p>
+                    <% if current_user.id == event.user.id %> 
                    <%= link_to "View event", event_path(event), class: "btn btn-block btn-primary" %>
+                   <% end %>
                 </div>
             </div>
         </div>
