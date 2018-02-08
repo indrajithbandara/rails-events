@@ -11,11 +11,10 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy', as: 'logout'
  
 
-  get '/users', to: 'users#index'
-  get '/user/:id/edit', to: 'users#edit', as: 'edit_profile'
-  post '/user/:id/edit', to: 'users#update'
-  delete '/user/:id', to: 'users#destroy', as: 'delete_profile'
+  #get '/users', to: 'users#index'
+  #get '/user/:id/edit', to: 'users#edit', as: 'edit_profile'
+  #post '/user/:id/edit', to: 'users#update'
+  #delete '/user/:id', to: 'users#destroy', as: 'delete_profile'
   
   resources :events
-  #resources :friendships
 end

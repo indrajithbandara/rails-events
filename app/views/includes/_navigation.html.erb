@@ -6,21 +6,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
+       
         
       <% if logged_in? %>
 
+       <li class="nav-item">
+           <%= link_to "All events", events_path, class: "nav-link" %>
+        </li>
+
+         <li class="nav-item">
+           <%= link_to "Post an event", new_event_path, class: "nav-link" %>
+        </li>
+
         <li class="nav-item">
-           <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %>
+           <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-md btn-danger" %>
         </li>
 
         <% else %>
 
-        <button type="button" class="btn btn-success" class="btn btn-primary" data-toggle=  "modal" data-target="#Modal">
+        <button type="button" class="btn btn-md btn-success" data-toggle="modal" data-target="#Modal">
             Login
         </button>
 

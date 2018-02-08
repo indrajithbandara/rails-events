@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 		@event = current_user.events.new(event_params)
 		 if @event.save
     	flash[:success] = "New event: #{@event.title} published ! "
-      redirect_to root_path
+      redirect_to event_path(@event)
     else
     	flash.now[:danger] = @event.errors.full_messages.to_sentence
       render 'new'
