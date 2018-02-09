@@ -1,1 +1,6 @@
-# Si tu me corrige va te coucher et attends demain matin stp je fini merci @david sur slack
+Il y a encore pas de truc à faire mais sa commence à devenir sympa
+
+Tu peux cloner sa et le faire tourer en local et ou voir le resultat sur heroku inscris toi pour voir !
+
+[Heroku App](https://very-important-parties.herokuapp.com/)
+
