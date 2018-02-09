@@ -1,4 +1,4 @@
-Il y a encore pas de truc à faire mais sa commence à devenir sympa
+Il y a encore plein de truc à faire mais sa commence à devenir sympa
 
 Tu peux cloner sa et le faire tourer en local et ou voir le resultat sur heroku inscris toi pour voir !
 
