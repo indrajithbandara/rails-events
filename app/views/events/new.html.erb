@@ -6,7 +6,7 @@
       </div>
 
       <div class="card-body">
-        <%= form_tag '/events' do  %>
+        <%= form_tag '/new/event' do  %>
          <div class="form-group">
             <label for="title">Event title</label>
             <%= text_field_tag :title, nil, class: 'form-control' %>

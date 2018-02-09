@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :register]
 
   def index
   	@events = Event.all
@@ -20,7 +20,20 @@ class EventsController < ApplicationController
     end
 	end
 
+  def show
+  end
 
+  def register
+    @user_id = User.find(params[:user_id])
+    @registration = @event.registrations.new
+    @registration.user_id = @user_id.id
+    if @registration.save
+      redirect_to event_path(@event)
+     else
+      flash.now[:danger] = "Invitation failed !"
+      render event_path(@event)
+    end
+  end
 
 
 	private

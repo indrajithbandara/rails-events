@@ -14,17 +14,15 @@
                       Location : <%= event.location %>
                     </p>
                      <p class="my-1 pull-right">
-                      Start date : <%= time_ago_in_words(event.start_date)  %>
+                      Start date : <%= event.start_date.strftime("%v")  %>
                     </p>
                      <p class="my-1 pull-right">
-                      End date : <%= time_ago_in_words(event.end_date)  %>
+                      End date : <%= event.end_date.strftime("%v")  %>
                     </p>
                      <p class="my-1 pull-right">
                      Event creator : <%= event.user.username %>  
                     </p>
-                    <% if current_user.id == event.user.id %> 
                    <%= link_to "View event", event_path(event), class: "btn btn-block btn-primary" %>
-                   <% end %>
                 </div>
             </div>
         </div>
