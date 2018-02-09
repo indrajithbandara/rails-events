@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :register]
+  before_action :set_event, only: [:show, :register]
+  before_action :logged_in_user, only: [:index, :new, :show]
+
 
   def index
   	@events = Event.all
@@ -45,5 +47,19 @@ class EventsController < ApplicationController
 
   def event_params
     params.permit(:title, :location, :user_id, :start_date, :end_date) 
+  end
+
+  # Confirms a logged-in user.
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "You need to register and login first !"
+        redirect_to root_path
+      end
+    end
+
+    # Stores the URL trying to be accessed.
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
   end
 end

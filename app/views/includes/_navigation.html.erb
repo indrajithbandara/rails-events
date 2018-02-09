@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Very Important Parties</a>
+    <%= link_to "Very Important Parties", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,6 +9,12 @@
        
         
       <% if logged_in? %>
+      
+      <% unless current_page?(root_path) %>
+      <li class="nav-item">
+           <%= link_to "My Rendez-vous", root_path, class: "nav-link" %>
+        </li>
+      <% end %>
 
        <li class="nav-item">
            <%= link_to "All events", events_path, class: "nav-link" %>

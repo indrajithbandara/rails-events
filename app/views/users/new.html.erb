@@ -30,7 +30,7 @@
 <% else %>
 
 <div class="card text-center">
-  <div class="card-block">
+  <div class="card-block" style="margin-bottom:25px;">
       <div class="gravatar text-center" style="margin-top: 25px;">
           <%= gravatar_for current_user, size: 100 %>
         </div>
@@ -39,8 +39,13 @@
     </h4>
     <p class="card-text">You can post an event and invite users</p>
     <a href="<%= new_event_path %>" class="btn btn-primary" style="margin-bottom: 20px;">New event</a>
+    <hr>
+    You are registered to <%= pluralize( current_user.registrations.count, 'event' ) %>
+   </ul>
   </div>
 </div>
+
+
 
 
 <% end %>

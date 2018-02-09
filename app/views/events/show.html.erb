@@ -35,14 +35,14 @@
 	</div>
 </div>
 
- <% if current_user.id == @event.user.id %> 
+
 <div class="row mb-4">
 	<div class="col">
 		<div class="card" style="margin-top: 50px;">
 			<div class="card-header">
 				<h5 style="color:#fff;">
 				<strong>
-				Invite users to this party
+				User Invitations
 	      </strong>
 	      </h5>
      		 <div class="card-body" style="margin-top: 30px;">
@@ -52,7 +52,7 @@
 					      <tr>
 					        <th>Username</th>
 					        <th>Email</th>
-					        <th></th>
+					        <th>Invitation Status</th>
 					         <th></th>
 					      </tr>
 					    </thead>
@@ -63,18 +63,13 @@
 					        <td><%= user.email %></td>
 					         <td>
 					         		<%= is_registered?(user, @event) %>
-					       <!--   		<span class="badge badge-success">
-					         			Invited
-					         		</span>
-					         			<span class="badge badge-warning">
-					         			Not Invited
-					         		</span> -->
-					      
-					         </td>
+							     </td>
 					        <td>
+					        	 <% if current_user.id == @event.user.id %> 
 					           	<%= form_tag register_path do  %>
 								        	<%= hidden_field_tag "user_id", "#{user.id}" %>
-						          		<%= submit_tag 'Invite', class: 'btn  btn-md btn-primary' %> 	
+						          		<%= submit_tag 'Invite', class: 'btn  btn-block  btn-primary' %> 
+						          <% end %>	
 					        	<% end %>
 					        	</td>
 					        </td>
@@ -89,6 +84,6 @@
 	</div>
 </div>
 
- <% end %>
+ 
 
 
