@@ -36,6 +36,11 @@ body {
     overflow: hidden;
 }
 
+.status .badge {
+    margin: 10px;
+  padding: 10px;
+}
+
 
 // import scss file
 @import "bootswatch/cyborg/variables";

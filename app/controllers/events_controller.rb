@@ -30,8 +30,8 @@ class EventsController < ApplicationController
     if @registration.save
       redirect_to event_path(@event)
      else
-      flash.now[:danger] = "Invitation failed !"
-      render event_path(@event)
+      flash[:danger] = "You already invited #{@user_id.username}"
+      redirect_to event_path(@event)
     end
   end
 

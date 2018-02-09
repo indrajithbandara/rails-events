@@ -9,4 +9,20 @@ module ApplicationHelper
 	def all_users
 		User.all
 	end
+
+	def is_registered?(user, event)
+		@registrations = Registration.all	
+		@registrations.each do |registration|     
+      if user.id == registration.user_id && event.id == registration.event_id
+      	return '<span class="status badge badge-success">
+					         			Already Invited
+					         		</span>'.html_safe
+      else
+      	return '<span class="status badge badge-warning">
+					         			Not Invited
+					         		</span>'.html_safe
+      end
+		end
+	end
+
 end
